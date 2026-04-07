@@ -41,13 +41,21 @@ pip install -r requirements.txt
 `tap_tracker.py` requires both a recording path and a resize width:
 
 ```bash
-python3 tap_tracker.py /path/to/video.mp4 --resize-width 1920
+python3 tap_tracker.py /path/to/video.mp4 --resize-width 1280
 ```
 
 ### Parameters
 
 - `video`: path to the recorded video
-- `--resize-width`: frame width used before analysis. Only `1366` and `1920` are currently supported. Use `1366` for game resolutions `1366x768` or `2732x1536`, and `1920` for `1920x1080` or `3840x2160`
+- `--resize-width`: first confirm `Graphics -> Resolution` and `UI -> UI Size` in game, then choose the value from the table below:
+
+| Resolution | UI Size | Value |
+| --- | --- | --- |
+| `1024x768` | `-` | `1024` |
+| `1280x720` or `2560x1440` | `-` | `1280` |
+| `1366x768` or `2732x1535` | `-` | `1366` |
+| `1920x1080` or `3840x2160` | `default ratio` | `1366` |
+| `1920x1080` or `3840x2160` | `ideal ratio` | `1920` |
 
 Full help:
 
@@ -68,14 +76,14 @@ base_starforce,success,failed,destroyed,total,success_rate,failed_rate,destroyed
 You can redirect it directly into a file:
 
 ```bash
-python3 tap_tracker.py /path/to/video.mp4 --resize-width 1920 > result.csv
+python3 tap_tracker.py /path/to/video.mp4 --resize-width 1280 > result.csv
 ```
 
 ## Notes
 
 For stable results, it is recommended to:
 
-- Use game resolutions `1366x768` (`2732x1536`) or `1920x1080` (`3840x2160`)
+- Confirm `Graphics -> Resolution` and `UI -> UI Size` in game, then choose `--resize-width` from the table above
 - Make sure the game window fills the full video width
 - Make sure the game image is not cropped or stretched
 
@@ -130,7 +138,7 @@ Required star-level template filenames:
 ## Known Limitations
 
 - Only star levels `15` through `23` are supported right now
-- Only resize widths `1366` and `1920` are supported
+- Only resize widths `1024`, `1280`, `1366`, and `1920` are supported
 
 ## License
 

@@ -12,7 +12,13 @@ import numpy as np
 
 RESULT_TEXTS = ("success", "failed", "destroyed", "protected")
 LEVELS = tuple(range(15, 24))
-RESIZE_WIDTHS = (1366, 1920)
+SUPPORTED_RESOLUTIONS = {
+    1024: "1024x768",
+    1280: "1280x720",
+    1366: "1366x768",
+    1920: "1920x1080",
+}
+RESIZE_WIDTHS = tuple(SUPPORTED_RESOLUTIONS)
 RESULT_TO_BUCKET = {
     "success": "success",
     "failed": "failed",
@@ -41,7 +47,10 @@ def parse_args() -> argparse.Namespace:
         type=int,
         choices=RESIZE_WIDTHS,
         required=True,
-        help="Resize frame width before template matching",
+        help=(
+            "Resize frame width before template matching. "
+            "Supported widths: 1024, 1280, 1366, 1920"
+        ),
     )
     parser.add_argument(
         "--templates-dir",

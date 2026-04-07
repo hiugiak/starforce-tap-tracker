@@ -41,13 +41,21 @@ pip install -r requirements.txt
 `tap_tracker.py` 必须显式指定录屏文件和缩放宽度：
 
 ```bash
-python3 tap_tracker.py /path/to/video.mp4 --resize-width 1920
+python3 tap_tracker.py /path/to/video.mp4 --resize-width 1280
 ```
 
 ### 参数
 
 - `video`：录屏文件路径
-- `--resize-width`：分析前统一缩放到的宽度，目前仅支持 `1366` 或 `1920`。游戏分辨率为 `1366x768` 或 `2732x1536` 时使用 `1366`，分辨率为 `1920x1080` 或 `3840x2160` 时使用 `1920`
+- `--resize-width`：先在游戏内确认 `Graphics -> Resolution` 和 `UI -> UI Size`，再参考下表选择对应的值：
+
+| Resolution | UI Size | Value |
+| --- | --- | --- |
+| `1024x768` | `-` | `1024` |
+| `1280x720` 或 `2560x1440` | `-` | `1280` |
+| `1366x768` 或 `2732x1535` | `-` | `1366` |
+| `1920x1080` 或 `3840x2160` | `default ratio` | `1366` |
+| `1920x1080` 或 `3840x2160` | `ideal ratio` | `1920` |
 
 查看完整帮助：
 
@@ -68,14 +76,14 @@ base_starforce,success,failed,destroyed,total,success_rate,failed_rate,destroyed
 你可以直接重定向到文件：
 
 ```bash
-python3 tap_tracker.py /path/to/video.mp4 --resize-width 1920 > result.csv
+python3 tap_tracker.py /path/to/video.mp4 --resize-width 1280 > result.csv
 ```
 
 ## 注意事项
 
 为了保证统计结果稳定，建议：
 
-- 保证游戏分辨率设置为 `1366x768`（`2732x1536`）或 `1920x1080`（`3840x2160`）
+- 先确认游戏内 `Graphics -> Resolution` 和 `UI -> UI Size` 设置，并按上表选择 `--resize-width`
 - 保证游戏窗口宽度充满视频
 - 保证游戏画面没有被剪切，游戏画面比例没有被压缩
 
@@ -130,7 +138,7 @@ python3 tap_tracker.py /path/to/video.mp4 --resize-width 1920 > result.csv
 ## 已知限制
 
 - 当前仅支持 `15` 到 `23` 星
-- 当前仅支持 `1366` 和 `1920` 两种分析宽度
+- 当前仅支持 `1024`、`1280`、`1366`、`1920` 四种分析宽度
 
 ## 许可协议
 
