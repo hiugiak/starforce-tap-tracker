@@ -47,7 +47,7 @@ python3 tap_tracker.py /path/to/video.mp4 --resize-width 1280
 ### 参数
 
 - `video`：录屏文件路径
-- `--resize-width`：先在游戏内确认 `Graphics -> Resolution` 和 `UI -> UI Size`，再参考下表选择对应的值：
+- `--resize-width`：先在游戏的设置中确认 `Graphics -> Resolution` 和 `UI -> UI Size` 的值，再参考下表选择对应的值：
 
 | Resolution | UI Size | Value |
 | --- | --- | --- |

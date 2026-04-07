@@ -47,7 +47,7 @@ python3 tap_tracker.py /path/to/video.mp4 --resize-width 1280
 ### Parameters
 
 - `video`: path to the recorded video
-- `--resize-width`: first confirm `Graphics -> Resolution` and `UI -> UI Size` in game, then choose the value from the table below:
+- `--resize-width`: first confirm the value of `Graphics -> Resolution` and `UI -> UI Size` in game settings, then choose the value from the table below:
 
 | Resolution | UI Size | Value |
 | --- | --- | --- |
