@@ -131,3 +131,7 @@ Required star-level template filenames:
 
 - Only star levels `15` through `23` are supported right now
 - Only resize widths `1366` and `1920` are supported
+
+## License
+
+This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.

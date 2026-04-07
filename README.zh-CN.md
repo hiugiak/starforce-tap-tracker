@@ -131,3 +131,7 @@ python3 tap_tracker.py /path/to/video.mp4 --resize-width 1920 > result.csv
 
 - 当前仅支持 `15` 到 `23` 星
 - 当前仅支持 `1366` 和 `1920` 两种分析宽度
+
+## 许可协议
+
+本项目基于 MIT License 开源，详见 [LICENSE](LICENSE)。
