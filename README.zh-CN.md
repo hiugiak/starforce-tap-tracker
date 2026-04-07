@@ -83,6 +83,7 @@ python3 tap_tracker.py /path/to/video.mp4 --resize-width 1280 > result.csv
 
 为了保证统计结果稳定，建议：
 
+- 最好不要在游戏运行时直接执行这个脚本；我们无法确定 Nexon 会将哪些行为判定为 hacking
 - 先确认游戏内 `Graphics -> Resolution` 和 `UI -> UI Size` 设置，并按上表选择 `--resize-width`
 - 保证游戏窗口宽度充满视频
 - 保证游戏画面没有被剪切，游戏画面比例没有被压缩

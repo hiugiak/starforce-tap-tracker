@@ -83,6 +83,7 @@ python3 tap_tracker.py /path/to/video.mp4 --resize-width 1280 > result.csv
 
 For stable results, it is recommended to:
 
+- Avoid running this script while the game is live if possible; we do not know what Nexon may consider hacking
 - Confirm `Graphics -> Resolution` and `UI -> UI Size` in game, then choose `--resize-width` from the table above
 - Make sure the game window fills the full video width
 - Make sure the game image is not cropped or stretched
